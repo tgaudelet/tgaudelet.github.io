@@ -1,0 +1,749 @@
+<!doctype html>
+<html>
+  <head>
+	<title>Thomas Gaudelet</title>
+	<link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap-3.3.5-dist/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="home_style.css" rel="stylesheet">
+	<script src="aws-sdk.min.js"></script>
+    <script type="text/javascript">
+        var LPAWS = {};
+
+		// Initialize the Amazon Cognito credentials provider
+		AWS.config.region = 'eu-west-1'; // Region
+		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+			IdentityPoolId: 'eu-west-1:e8639739-d371-4a7c-bc4f-dd5af9538336',
+		});
+
+        LPAWS.sendToTopic = function() {
+            var sns = new AWS.SNS();
+			var	name = document.querySelector('#name').value;
+			var	email = document.querySelector('#email').value;
+            var msg = document.querySelector('#message').value;
+            var params = {
+                //Message: 'Hello topic', /* required */
+                Message: email + "\n\n " + msg,
+                Subject: 'Message on your website from ' + name,
+                TopicArn: 'arn:aws:sns:eu-west-1:261305297524:com-website-contact-form'
+            };
+            sns.publish(params, function(err, data) {
+                if (err) {
+					console.log(err, err.stack);
+					window.alert("Error, the message was not sent.");
+				} // an error occurred
+                else   {  
+					console.log(data);
+					window.alert("The message was succesfully sent.");
+					document.querySelector('#name').value = "";
+					document.querySelector('#email').value = "";
+					document.querySelector('#message').value = "";				
+				};           // successful response
+            });
+        };
+    </script>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+<script src="particles.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+  
+    <body>
+	<!-- Navigation bar -->
+
+    <div class="navbar">
+        <ul>
+
+          <li><a href="#home" class="navhome active" id="home">Thomas Gaudelet</a></li>
+          <li><a href="#publications" class="navpublications" id="publications">Publications</a></li>
+	  <li><a href="#resume" class="navresume" id="resume">Resume</a></li>
+          <li><a href="#projects" class="navprojects" id="projects">Past Projects</a></li>
+          <li><a href="#contact" class="navcontact" id="contact">Contact</a></li>
+        </ul>
+    </div>	
+	<div class="dropdown">
+	  <button class="dropbtn"><img src="Pictures/drpdwn.png" height="40" width="40"> </button>
+	  <div class="dropdown-content">
+		  <a href="#home" class="navhome active" id="home">Thomas Gaudelet</a>
+		  <a href="#publications" class="navhome" id="publications">Publications</a>
+		  <a href="#resume" class="navresume" id="resume">Resume</a>
+		  <a href="#projects" class="navprojects" id="projects">Projects</a>
+		  <a href="#contact" class="navcontact" id="contact">Contact</a>
+	  </div>
+	</div> 
+	<!-- Banner -->
+	<!--<div class="header top">
+		<div class="container">
+				<h1>Thomas Gaudelet <hr></h1>		
+	
+		</div>
+	</div> -->	
+
+
+	<div id="particles-js">
+
+	<script src="app.js"></script>
+</div>
+
+	<div id="main">
+	<!-- HOME page -->
+	
+	<div class="jumbotron active-jumbotron home">
+      <div class="container">
+			<h2>About me</h2>
+		<div class="row">
+			<div class="col-sm-3" style="margin: auto; display: block;">
+				<img src="Pictures/me.png" alt="" align="middle">
+      <div class="row">
+        <div class="col-sm-6" style="text-align: center">
+		<a class="link" href="https://www.linkedin.com/in/thomasgaudelet/" >
+		<img src="Pictures/linked3.png" align="middle">
+		</a>
+	</div>
+        <div class="col-sm-6" style="text-align: center">
+		<a class="link" href="https://github.com/tgaudele/" >
+		<img src="Pictures/github.png"  align="middle">
+		</a>
+	</div>
+      </div>
+				
+			</div>
+			<div class="col-sm-9">
+				<p>Hello and welcome! </p>
+				<p>I am a Graph Machine Learning Researcher at <a href="https://www.relationrx.com/" target="_blank">Relation Therapeutics</a>. </p><p>My research interests lie within the fields of mathematics and computing. I focus on developing models for mining, analysing, and integrating large scale data using graph theory and machine learning approaches. I use multi-scale molecular and clinical data to uncover new biological knowledge with an eye towards improving patient diagnosis, prognosis, and treatment.</p>
+
+				<p> I have a PhD in Computer Science from University College London. I am a graduate from the University of Oxford, MSc. in Applied Mathematics, and from Ecole Centrale de Lyon, BEng/MEng in general engineering.</p>
+				
+			</div>
+		</div>
+	  </div> 
+	</div>	
+	
+
+    <!-- PUBLICATIONS page -->
+	<div class="jumbotron publications" id="publications">
+      <div class="container">
+			<h2>Publications</h2>
+
+
+
+		<div class="project">
+			<div class="item row">
+			  <div class="col-sm-1">
+				<p class="source">P-6</p>
+			  </div>
+			  <div class="col-sm-11">
+				<p class="title"> <b>T. Gaudelet</b>, N. Malod-Dognin, and N. Pr&#382;ulj, <q><i>Integrative Data Analytic Framework to Enhance Cancer Precision Medicine</i></q>, arXiv.</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">				
+				<ul class="list-group">	
+					<li class="list-group-item logo"><a href="">Online version</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>With the advancement of high-throughput biotechnologies, we increasingly accumulate biomedical data about diseases, especially cancer. There is a need for computational models and methods to sift through, integrate, and extract new knowledge from the diverse available data to improve the mechanistic understanding of diseases and patient care. To uncover molecular mechanisms and drug indications for specific cancer types, we develop an integrative framework able to harness a wide range of diverse molecular and pan-cancer data. We show that our approach outperforms competing methods and can identify new associations. Furthermore, through the joint integration of data sources, our framework can also uncover links between cancer types and molecular entities for which no prior knowledge is available. Our new framework is flexible and can be easily reformulated to study any biomedical problems.</p>
+			  </div>
+			</div>
+		  </div>
+
+
+
+		<div class="project">
+			<div class="item row">
+			  <div class="col-sm-1">
+				<p class="source">P-5</p>
+			  </div>
+			  <div class="col-sm-11">
+				<p class="title">J. Lugo-Martinez, D. Zeiberg, <b>T. Gaudelet</b>, N. Malod-Dognin, N. Pr&#382;ulj, and P. Radivojac, <q><i>Classification in biological networks with hypergraphlet kernels</i></q>, Bioinformatics, , September 2020, .</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">				
+				<ul class="list-group">	
+					<li class="list-group-item logo"><a href="https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btaa768/5901538?redirectedFrom=fulltext">Online version</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>Biological and cellular systems are often modeled as graphs in which vertices represent objects of interest (genes, proteins, drugs) and edges represent relational ties between these objects (binds-to, interacts-with, regulates). This approach has been highly successful owing to the theory, methodology and software that support analysis and learning on graphs. Graphs, however, suffer from information loss when modeling physical systems due to their inability to accurately represent multi-object relationships. Hypergraphs, a generalization of graphs, provide a framework to mitigate information loss and unify disparate graph-based methodologies. We present a hypergraph-based approach for modeling biological systems and formulate vertex classification, edge classification and link prediction problems on (hyper)graphs as instances of vertex classification on (extended, dual) hypergraphs. We then introduce a novel kernel method on vertex- and edge-labeled (colored) hypergraphs for analysis and learning. The method is based on exact and inexact (via hypergraph edit distances) enumeration of hypergraphlets; i.e., small hypergraphs rooted at a vertex of interest. We empirically evaluate this method on fifteen biological networks and show its potential use in a positive-unlabeled setting to estimate the interactome sizes in various species.</p>
+			  </div>
+			</div>
+		  </div>
+
+
+		<div class="project">
+			<div class="item row">
+			  <div class="col-sm-1">
+				<p class="source">P-4</p>
+			  </div>
+			  <div class="col-sm-11">
+				<p class="title"> <b>T. Gaudelet</b>, N. Malod-Dognin, J. S&agrave;nchez-Valle, V. Pancaldi, A. Valencia, and N. Pr&#382;ulj, <q><i>Unveiling new disease, pathway, and gene associations via multi-scale neural networks</i></q>, PloS one, Volume 15, Issue 4, April 2020, p.e0231059.</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">				
+				<ul class="list-group">	
+					<li class="list-group-item logo"><a href="https://arxiv.org/abs/1901.10005">Online version</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>Diseases involve complex modifications to the cellular machinery. The gene expression profile of the affected cells contains characteristic patterns linked to a disease. Hence, new biological knowledge about a disease can be extracted from these profiles, improving our ability to diagnose and assess disease risks. This knowledge can be used for drug re-purposing, or by physicians to evaluate a patient's condition and co-morbidity risk.<br><br>
+     Here, we consider differential gene expressions obtained by microarray technology for patients diagnosed with various diseases. Based on these data and cellular multi-scale organization, we aim at uncovering disease--disease, disease--gene and disease--pathway associations. We propose a neural network with structure based on the multi-scale organization of proteins in a cell into biological pathways. We show that this model is able to correctly predict the diagnosis for the majority of patients. Through the analysis of the trained model, we predict disease--disease, disease--pathway, and disease--gene associations and validate the predictions by comparisons to known interactions and literature search, proposing putative explanations for the predictions. 
+</p>
+			  </div>
+			</div>
+		  </div>
+
+
+		<div class="project">
+			<div class="item row">
+			  <div class="col-sm-1">
+				<p class="source">P-3</p>
+			  </div>
+			  <div class="col-sm-11">
+				<p class="title"> <b>T. Gaudelet</b>, and N. Pr&#382;ulj, <q>Introduction to Graph and Network Theory</q>, <i>Analyzing Network Data in Biology and Medicine</i>, Cambridge University Press, 2019, Pages 111-150.</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">				
+				<ul class="list-group">	
+					<li class="list-group-item logo"><a href="https://books.google.co.uk/books?hl=en&lr=&id=oLeODwAAQBAJ&oi=fnd&pg=PR13&ots=5txlwSJ8Bm&sig=N9IfowDql88ujWR6WosxQaTqS_Y#v=onepage&q&f=false">Ebook link</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1><p>
+Hardly any entity exists in absolute isolation of others. It is
+usually a part of a larger system of greater complexity. This remains
+true at any scale.  For instance, stars and planets interact via
+different forces of attraction and repulsion that shape the universe.
+Species interact tightly through predator-prey relationships to form
+an often fragile ecosystem. Neurons in a brain interact to carry out
+complex tasks ranging from limb motion to information
+processing. Studying single entities in isolation of others is crucial
+to our understanding. However, it is also essential to study their
+roles as part of wider systems of interacting components. The organisation of such systems is far from random and reflects the
+function of the system. Understanding the organisational principles of
+the systems can shed light on the impact of changes on the system or
+on its environment. <br><br>
+
+Graphs (networks) are means of representing entities and their
+interactions, while abstracting much of the data about them. These
+representations are needed to develop tools to investigate the
+organisation of complex systems. Everyday examples of network
+representations of real systems include maps of public transport
+networks, which connect various stations, and the World Wide Web. In biology, many systems can naturally be modeled by networks.<br><br>
+
+In this book chapter, we introduce elements of graph and network theory. The target audience is students enrolled in bioinformatics modules.
+</p>
+			  </div>
+			</div>
+		  </div>
+
+		<div class="project">
+			<div class="item row">
+			  <div class="col-sm-1">
+				<p class="source">P-2</p>
+			  </div>
+			  <div class="col-sm-11">
+				<p class="title"> <b>T. Gaudelet</b>, N. Malod-Dognin, and N. Pr&#382;ulj, <q><i>Higher-order molecular organization as a source of biological function</i></q>, Bioinformatics, Volume 34, Issue 17, September 2018, Pages i944&ndash;i953.</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">				
+				<ul class="list-group">	
+					<li class="list-group-item logo"><a href="https://doi.org/10.1093/bioinformatics/bty570">Online version</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>Molecular interactions have widely been modelled as networks. The local wiring patterns around molecules in molecular networks are linked with their biological functions. However, networks model only pairwise interactions between molecules and cannot explicitly and directly capture the higher-order molecular organization, such as protein complexes and pathways. Hence, we ask if hypergraphs (hypernetworks), that directly capture entire complexes and pathways along with protein–protein interactions (PPIs), carry additional functional information beyond what can be uncovered from networks of pairwise molecular interactions. The mathematical formalism of a hypergraph has long been known, but not often used in studying molecular networks due to the lack of sophisticated algorithms for mining the underlying biological information hidden in the wiring patterns of molecular systems modelled as hypernetworks.<br><br>
+We propose a new, multi-scale, protein interaction hypernetwork model that utilizes hypergraphs to capture different scales of protein organization, including PPIs, protein complexes and pathways. In analogy to graphlets, we introduce hypergraphlets, small, connected, non-isomorphic, induced sub-hypergraphs of a hypergraph, to quantify the local wiring patterns of these multi-scale molecular hypergraphs and to mine them for new biological information. We apply them to model the multi-scale protein networks of bakers yeast and human and show that the higher-order molecular organization captured by these hypergraphs is strongly related to the underlying biology. Importantly, we demonstrate that our new models and data mining tools reveal different, but complementary biological information compared with classical PPI networks. We apply our hypergraphlets to successfully predict biological functions of uncharacterized proteins.</p>
+			  </div>
+			</div>
+		  </div>
+
+
+		<div class="project">
+			<div class="item row">
+			  <div class="col-sm-1">
+				<p class="source">P-1</p>
+			  </div>
+			  <div class="col-sm-11">
+				<p class="title"> H. Tsuchiya, K. Manabe, <b>T. Gaudelet</b>, T. Moriya, K. Suwabe, M. Tenjimbayashi, K. Kyong, F. Gillot, and S. Shiratori. <q>Improvement of heat transfer by promoting dropwise condensation using electrospun polytetrafluoroethylene thin films</q>, New Journal of Chemistry 41, no. 3 (2017): 982&ndash;991.</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">				
+				<ul class="list-group">	
+					<li class="list-group-item logo"><a href="https://pubs.rsc.org/en/content/articlelanding/2017/nj/c6nj03566c/unauth#!divAbstract">Online version</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>Vapor condensation is a crucial part of a broad range of industrial applications including power generation, water harvesting, and air conditioning. Hydrophobic and superhydrophobic surfaces promote dropwise condensation in vapor-filled environments and increase their heat transfer coefficients more than filmwise condensation on hydrophilic surfaces. Although dropwise condensation can lead to energy-efficient transfer, it is hard to achieve stable dropwise condensation in high-temperature environments. To decide the best conditions for achieving higher heat transfer is also difficult because the heat transfer coefficient is influenced by not only surface wettability but also surface structures of thin films and substrates. Herein, we fabricated thin films with different wettabilities and surface structures using polytetrafluoroethylene (PTFE) which show high heat resistance to determine the best conditions for heat transfer. Several different films were prepared by electrospinning a mixed solution of PTFE and polyvinyl alcohol on aluminum (Al) and copper (Cu) tubes. After annealing them, the PTFE thin films enhanced heat transfer performance and showed stable dropwise condensation in high-temperature environments. The films fabricated by electrospinning a solution containing 66 wt% PTFE displayed the highest heat transfer coefficients, with heat transfer coefficients 64% and 61% greater than those of uncoated Al and Cu tubes, respectively. That is because homogeneous superhydrophobic surfaces that showed the highest departure frequency of condensed water droplets were fabricated using 66 wt% PTFE. The results suggest that these electrospun PTFE thin films would demonstrate excellent potential for use on the surface of heat exchangers in various industries.</p>
+			  </div>
+			</div>
+		  </div>
+
+
+
+		<div class="project">
+			<div class="item row">
+			  <div class="col-sm-1">
+				<p class="source">C</p>
+			  </div>
+			  <div class="col-sm-11">
+				<p class="title"> Workshop, Conference Talks & Posters</p>
+			  </div>
+			</div>
+			<div class="description row">
+				<ul class="list-group">	
+
+					<li class="list-group-item"> 
+					<div class="row int">
+					<div class="col-sm-2">
+					<p>ISMB/ECCB 2019<br><i>Poster</i></p>
+					</div>						
+					<div class="col-sm-10">
+					<b>T. Gaudelet</b>, N. Malod-Dognin, J. S&agrave;nchez-Valle, V.  Pancaldi, A. Valencia, and N. Pr&#382;ulj,<q>Unveiling new disease, pathway, and gene associations via multi-scale neural networks</q>, ISMB-ECCB, Basel, Switzerland, July 21-25, 2019. 
+					</div>
+					</div>
+					</li>
+
+					<li class="list-group-item"> 
+					<div class="row int">
+					<div class="col-sm-2">
+					<p>ECCB 2018<br><i>Talk</i></p>
+					</div>						
+					<div class="col-sm-10">
+					<b>T. Gaudelet</b>, N. Malod-Dognin, and N. Pr&#382;ulj, <q>Higher order molecular organisation as a source of biological function</q>, ECCB, Athens, Greece, September 8-12, 2018. 
+					</div>
+					</div>
+					</li>
+
+					<li class="list-group-item"> 
+					<div class="row int">
+					<div class="col-sm-2">
+					<p>NetSci 2018<br><i>Poster</i></p>
+					</div>						
+					<div class="col-sm-10">
+					N. Malod-Dognin, <b>T. Gaudelet</b>, S.F.L. Windels, and N. Pr&#382;ulj, <q>Higher-order modelling and integration of biological data for precision medicine</q>, International School and Conference on Network Science, Satellite Symposium on Network Medicine, Paris, France, June 11-15, 2018. 
+					</div>
+					</div>
+					</li>
+				
+					<li class="list-group-item"> 
+					<div class="row int">
+					<div class="col-sm-2">
+					<p>ECTB 2018 <br><i>Talk</i></p>
+					</div>						
+					<div class="col-sm-10">
+					N. Malod-Dognin, <b>T. Gaudelet</b>, S.F.L. Windels, and N. Pr&#382;ulj, <q>Towards higher-order modelling and integration of biological data for precision medicine</q>, European Conference on Translational Bioinformatics, Barcelona, Spain, April 16-17, 2018. 
+					</div>
+					</div>
+					</li>
+
+					<li class="list-group-item"> 
+					<div class="row int">
+					<div class="col-sm-2">
+					<p style="text-align:left">Complex Networks 2017<br><i>Talk</i></p>
+					</div>						
+					<div class="col-sm-10">
+					<b>T. Gaudelet</b>, N. Malod-Dognin, J. Lugo-Martinez, P. Radivojac, and N. Pr&#382;ulj, <q>Hypergraphlets Give Insight into Multi-Scale Organisation of Molecular Networks</q>, International Conference on Complex Networks and Their Applications, Lyon, France, November 29 - December 01, 2017. 
+					</div>
+					</div>
+					</li>
+					
+					<li class="list-group-item"> 
+					<div class="row int">
+					<div class="col-sm-2">
+					<p>ISMB/ECCB 2017<br><i>Poster</i></p>
+					</div>						
+					<div class="col-sm-10">
+					<b>T. Gaudelet</b>, N. Malod-Dognin, J. Lugo-Martinez, P. Radivojac, and N. Pr&#382;ulj, <q>Hypergraphlets Give Insight into Multi-Scale Organisation of Molecular Networks</q>, ISMB-ECCB, Prague, Czech Republic, July 21-25, 2017. 
+					</div>
+					</div>
+					</li>
+
+					<li class="list-group-item"> 
+					<div class="row int">
+					<div class="col-sm-2">
+					<p style="text-align:left">IX UCM Modelling week 2015<br> <i>Workshop</i></p>
+					</div>						
+					<div class="col-sm-10">
+					E.H. Serrano, S.I. Moreno, R.P. Ochoa, M.V. Dom&iacute;nguez, and <b>T. Gaudelet</b>,  <q>Generating a caplet volatility surface</q>, IX UCM Modelling week, Madrid, Spain, June, 2015. 
+					</div>
+					</div>
+					</li>
+
+					<li class="list-group-item"> 
+					<div class="row int">
+					<div class="col-sm-2">
+					<p>JSAP 2014<br><i>Poster</i></p>
+					</div>						
+					<div class="col-sm-10">
+					<b>T. Gaudelet</b>, K. Suwabe, K. Kyung, F. Gillot, S. Shiratori, <q>Investigation of dropwise condensation on PTFE-based coated surfaces</q>, JSAP, Tokyo, Japan, March 18, 2014. 
+					</div>
+					</div>
+					</li>
+				</ul>
+</div>
+</div>
+</div>
+
+
+
+    <!-- RESUME page -->
+	<div class="jumbotron resume" id="resume">
+      <div class="container">
+			<h2>Resume</h2>
+		<div class="row ext">
+			<!--<div class="col-sm-6">-->
+				<h3>Education</h3>
+				<ul class="list-group">		
+					<li class="list-group-item">
+						<div class="row int">							
+							<div class="col-sm-2">
+								<p><br>2016-<br>2020</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>Ph.D Candidate<br><i>University College London, U.K.</i></h4>
+								<h5>Department of Computer Science. <br> Supervised by Nata&#353;a Pr&#382;ulj<br> Integration of multi-scale protein
+interactions for biomedical data
+analysis.</h5>
+							</div>
+						</div>
+					</li>					
+					<li class="list-group-item">
+						<div class="row int">							
+							<div class="col-sm-2">
+								<p><br>2019</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>Research Student<br><i>Stanford University, California, U.S.A.</i></h4>
+								<h5>Department of Computer Science. <br> Supervised by Prof. Jure Leskovec and Prof. Marinka Zitnik</h5>
+							</div>
+						</div>
+					</li>					
+					<li class="list-group-item">
+						<div class="row int">							
+							<div class="col-sm-2">
+								<p><br>2014-<br>2015</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>Master of Science<br><i>University of Oxford, U.K.</i></h4>
+								<h5>Mathematical Modelling and Scientific Computing<br>Dissertation: investigated and implemented pattern recognition using multi-layer neural networks, highlighting their robustness.</h5>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">							
+							<div class="col-sm-2">
+								<p><br>2011-<br>2016</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>BEng/MEng General Engineering<br><i>Ecole Centrale Lyon, France</i></h4>
+								<h5>Developed a software designed to read multimedia files during the first year project. During the second year, studied a solution to optimise the shape of vehicle components based on the level-set method.</h5>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">							
+							<div class="col-sm-2">
+								<p><br>2008-<br>2011</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>Intensive Preparatory Courses<br><i>Lyc&eacute;e Pierre de Fermat, Toulouse, France</i></h4>
+								<h5>Grandes Ecoles entry exam preparatory courses: Mathematics, Physics, Computer Science.</h5>
+							</div>
+						</div>
+					</li>
+				</ul>
+			<!--</div>-->
+			<!--<div class="col-sm-6">-->
+				<h3>Work experience</h3>
+
+				<ul class="list-group">	
+
+
+<li class="list-group-item">
+	<div class="row">
+		<div class="col-sm-2">
+			<p><br>2020-<br>Present</p>
+		</div>
+		<div class="col-sm-10">
+			<h4>Graph ML Researcher<br><i>Relation Therapeutics</i></h4>
+		</div>
+	</div>
+</li>
+
+	<li class="list-group-item">
+						<div class="row">							
+							<div class="col-sm-2">
+								<p><br>2016-<br>2019</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>Teaching Assistant<br><i>University College London, U.K.</i></h4>
+ <ul style="list-style-position: inside;padding-left: 0;">
+  <li><i>Advanced Deep Learning and Reinforcement Learning</i>, Prof. Thore Graepel and DeepMind researchers</li>
+  <li><i>Introduction to Machine Learning</i>, Dr. Iasonas Kokkinos</li>
+  <li><i>Robotics Programming</i>, Prof. Ghita Kouadri Mostefaoui</li>
+</ul> 
+								
+							</div>
+						</div>
+					</li>
+
+
+					<li class="list-group-item">
+						<div class="row">							
+							<div class="col-sm-2">
+								<p><br>2016</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>R&amp;D Intern<br><i>Fuel3D Technologies</i></h4>
+								<h5>Investigated and implemented algorithms, using Matlab and C++, to improve on the quality of the reconstruction of three dimensional surfaces using Vision and Photometric Stereo.</h5>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">							
+							<div class="col-sm-2">
+								<p><br>2014</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>Development Intern<br><i>PathControl</i></h4>
+								<h5>Developed the user interface of the software for Passive Magnetic Ranging (PMR) created by PathControl. It involved mainly Matlab and the associated GUI Toolbox. </h5>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">							
+							<div class="col-sm-2">
+								<p><br>2013-<br>2014</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>Research Intern<br><i>Keio University, Tokyo</i></h4>
+								<h5>Investigated the condensation behaviour of water on PTFE-based coating. The objective was to enhance heat exchanges through the surface. We presented the results at the JSAP conference in Tokyo.</h5>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">							
+							<div class="col-sm-2">
+								<p><br>2013</p>
+							</div>						
+							<div class="col-sm-10">
+								<h4>Research Intern<br> <i> EDF</i></h4>
+								<h5>Examined the interest of nanofilms/nanoparticles for energy production and nuclear central safety. </h5>
+							</div>
+						</div>
+					</li>
+				</ul>
+			<!--</div>-->
+		</div>
+	  </div> 
+	</div>
+	
+	<!-- Projects -->	
+	<div class="jumbotron projects">
+      <div class="projects_ container">
+		<!-- Dissertation -->
+		<h2>Past projects</h2>
+		  <div class="project">
+			<div class="item row">
+			  <div class="col-sm-3">
+				<p class="source">Fuel3D Internship <br> 2016</p>
+			  </div>
+			  <div class="col-sm-9">
+				<p class="title">Three-source Photometic Stereo. <br> (Confidential report )</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">				
+				<ul class="list-group">	
+					<li class="list-group-item logo"><img src="Pictures/fuel3d.jpg"></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>We investigate different leads to improve photometric stereo for the reconstruction of three-dimensional shape based on a set of input pictures captured with Fuel3D Technologies Limited scanner SCANIFY<sup>&reg;</sup>.</p>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <div class="project">
+			<div class="item row">
+			  <div class="col-sm-3">
+				<p class="source">MSc Dissertation <br> 2015</p>
+			  </div>
+			  <div class="col-sm-9">
+				<p class="title">Short-range Impact of Damage on Object Recognition in a trained Neuronal Network.</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">				
+				<ul class="list-group">	
+					<li class="list-group-item logo"><img src="Pictures/oxlogo.png"></li>
+					<li class="list-group-item"><a href="Files/Dissertation.pdf" download>Download</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>We investigate the impact of damage on a neuronal network trained to recognise objects. A neuronal network is formed by a set of nodes that represent neurons, and edges that represent the connections between the neurons. To set the stage, we review some existing models that describe the dynamics of individual neurons. We then focus on Integrate-and-Fire (IF) models that we use for this project. We then discuss the numerical method that we use for our model of interacting IF neurons. We then construct our network using a multilayer-network formalism. We consider a simple multilayer network architecture that represents the interactions between the retina and the primal visual cortex (V1) in the brain. We train the system to recognise objects and differentiate between them using the "continuous transformation learning rule", which is based on relative spike times of pre-synaptic and post-synaptic neurons. To highlight the robustness and stability of the trained neuronal network, we simulate damage affecting the connections in the network and measure the performance of the deteriorated systems. A network has good performances if the neurons in the V1 representation differentiate successfully between different objects. In this situation, a subset of the neurons responds strongly to the stimuli corresponding to one object and weakly to the other. Our study provides preliminary insights on the impact of damage on connections between two neuronal subsystems.</p>
+			  </div>
+			</div>
+		  </div>
+		  
+		<!-- Stages-->
+		  <div class="project">
+			<div class="item row">
+			  <div class="col-sm-3">
+				<p class="source">Pathcontrol Internship<br> 2014 </p>
+			  </div>
+			  <div class="col-sm-9">
+				<p class="title">GUI Development for Passive Magnetic Ranging. <br> (Confidential report)</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">
+				<ul class="list-group">	
+					<li class="list-group-item logo"><img src="Pictures/pathcontrol_logo.png"></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>The Passive Magnetic Ranging, or PMR, is a detection method based on the magnetic field produced by an object one tries to locate. The idea is to drive a magnetic object into the ground and to monitor	its magnetic field. Then using the magnetic interferences produced by the target one can calculate its position relatively to the measurement devices. In our case, this allows the user to control the borehole's trajectory in order to achieve, for instance, the interception of the second well. The work entails developping the graphical user interface for PathControl's PMR software. It also involve detailing the method used as well as the software layout and how to use it.</p>
+              </div>
+			</div>
+		  </div>
+		  
+		  <div class="project">
+			<div class="item row">
+			  <div class="col-sm-3">
+				<p class="source">Internship Research<br> 2014 </p>
+			  </div>
+			  <div class="col-sm-9">
+				<p class="title">Investigation of Condensation Mode on PTFE-based Coating.</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">
+				<ul class="list-group">	
+					<li class="list-group-item logo"><img src="Pictures/Keio_University_Crest.png"></li>
+					<li class="list-group-item"><a href="Files/Report_Keio.pdf" download>Download</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>The enhancement of heat transfers during condensation is at the core of numerous researches as it will lead to increased efficiencies and productivities for various fields especially for power generation. One of the main solutions explored at the current time is to engineer a surface coating in order to promote dropwise condensation, in opposition of the filmwise condensation generally observed in actual condensing systems. With this goal in mind, we investigate the use of polytetrafluoroethylene-coated (PTFE) surfaces to improve heat transfers.</p>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <div class="project">
+			<div class="item row">
+			  <div class="col-sm-3">
+				<p class="source">EDF Internship<br> 2013 </p>
+			  </div>
+			  <div class="col-sm-9">
+				<p class="title">Nanotechnologies in Energy Production. <br> (Confidential report)</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">
+				<ul class="list-group">	
+					<li class="list-group-item logo"><img src="Pictures/EDFlogo.png"></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>We present the interest of superhydrophobic and superhydrophilic surfaces for the enhancement of heat transfers. For this purpose, we review the literature on the subject and investigate the impact of these surfaces for two applications: improvement of energy production and improvement of cooling methods. Furthermore, we evaluate different hydrophobic products proposed on the market and try to make out which ones would suit EDF best. Finally, we conduct and expose the results of a study on the effect of a magnetite deposit on a surface's wettability.</p>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <div class="project">
+			<div class="item row">
+			  <div class="col-sm-3">
+				<p class="source">Research Project <br> 2013 </p>
+			  </div>
+			  <div class="col-sm-9">
+				<p class="title">Shape Optimisation of Vehicle Components using the Level-Set Method. <br>(Report in french)</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">
+				<ul class="list-group">	
+					<li class="list-group-item logo"><img src="Pictures/Logo_centrale_lyon.png"></li>
+					<li class="list-group-item"><a href="Files/Report_PAr.pdf" download>Download</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>We investigate shape and topologic optimisation based on the Level-Set method developed by the mathematicians J.A. Sethian adn S. Osher. We start by detailing the theory and the optimisation algorithm. We then illustrate how the method works on a simple 2D case. The algorithm is implemented combining <span style="font-variant:small-caps">Matlab</span> and Code Aster.</p>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <div class="project">
+			<div class="item row">
+			  <div class="col-sm-3">
+				<p class="source">Group project <br> 2012 </p>
+			  </div>
+			  <div class="col-sm-9">
+				<p class="title">Creation of a Smart Multimedia Files Manager.<br> (Report in french)</p>
+			  </div>
+			</div>
+			<div class="description row">
+			  <div class="col-sm-2">
+				<ul class="list-group">	
+					<li class="list-group-item logo"><img src="Pictures/Logo_centrale_lyon.png"></li>
+					<li class="list-group-item"><a href="Files/Report_PE.pdf" download>Download</a></li>
+				</ul>
+			  </div>
+			  <div class="col-sm-10">
+				<h1>Abstract</h1>
+				<p>This study project has for goal the development of a multimedia software, that we baptised Tag'n'Link. The project was proposed by the laboratory LIRIS of Ecole Centrale Lyon. LIRIS stands for Computer Science Laboratory for Image Processing and Information Systems (Laboratoire d'Informatique en Image et Syst&egrave;mes d'Information). LIRIS was developing algorithms to detect concepts and emotions in pictures or music files. An emotion being defined by a degree of positivity (joy/sadness) and a level of activity. A concept is for instance a word or an object, for instance a car in a picture. The idea of the projects was to use these algorithms as a black box and to develop a software around them in order to exploit them. The main noveltie was to use both the algorithm and user tags associated to the media files in order to easily generate playlists, slideshows, and combinations of the two according to a certain degree of similarity.</p>
+			  </div>
+			</div>
+		  </div>
+	    </div>
+	</div>
+	
+	<!-- Contact page -->
+	<div class="jumbotron contact">
+      <div class="container">
+			<h2 style='color:white'>Get in touch</h2>
+			<form>
+				<div class="form-group">
+
+				  <input type="text" class="form-control name" rows="1" placeholder="Name" id="name"></textarea>
+				  <input type="text" class="form-control address" rows="1" placeholder="E-mail address" id="email"></textarea>
+				  <textarea type="text" class="form-control message" rows="10" placeholder="Message" id="message"></textarea>
+				</div>
+				<button class="btn-default" onclick="LPAWS.sendToTopic(); return false;">Send</button>			
+			</form>
+	  </div>
+	
+	</div>
+	<!-- Footer -->
+	<div class="footer">
+		<div class="containerfoot">
+			<div class="pull-right">
+				<p>Maintained by Thomas Gaudelet. Last updated: Friday 10/04/2020 21:00 PM GMT    </p>
+			</div>
+		</div>
+	</div>
+</div>
+	<!-- Scripts -->
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="home_app.js"></script>
+
+	</body>
