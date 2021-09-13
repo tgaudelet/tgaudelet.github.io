@@ -2,3 +2,4 @@ plugins:
   - jekyll-seo-tag
 author: Thomas Gaudelet
   twitter: thomasgaudelet
+ google-analytics: Thomas Gaudelet
