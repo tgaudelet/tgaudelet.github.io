@@ -1,5 +1,4 @@
 plugins:
   - jekyll-seo-tag
 author: Thomas Gaudelet
-  twitter: thomasgaudelet
- google-analytics: Thomas Gaudelet
+google-analytics: Thomas Gaudelet
