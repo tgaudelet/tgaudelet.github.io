@@ -15,12 +15,21 @@ html,body {
 }
 
 @font-face {
-  font-family: "Kreon-Light";
-  src: url("Font/Kreon-Light.tff");
+  font-family: "Opensans";
+  src: url("Font/Opensans.tff");
 }
 @font-face {
-  font-family: "Ubuntu-Light";
-  src: url("Font/Ubuntu-Light.tff");
+  font-family: "Opensans";
+  src: url("Font/Opensans-Regular.ttf");
+}
+@font-face {
+
+  font-family: "Itim-Regular";
+  src: url("Font/Itim-Regular.ttf");
+}
+@font-face {
+  font-family: "Opensans";
+  src: url("Font/Opensans.tff");
 }
 @font-face {
   font-family: "Kreon-Bold";
@@ -40,7 +49,7 @@ html,body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: max(30px,3vh);	
+  height: max(100px,3vh);	
   margin: 0;
   padding:0;
 }
@@ -68,8 +77,8 @@ html,body {
     text-align: center;
     padding: 1vh 1vh;
     text-decoration: none;
-    font-family: 'Ubuntu-Light';
-    font-size: max(15px,1.8vh);
+    font-family: 'Itim-Regular';
+    font-size: max(20px,1.8vh);
 }
 .navbar li a:hover:not(.active) {
     background-color: rgba(255,255,255,0.5);
@@ -112,7 +121,7 @@ html,body {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
-    font-family: 'Ubuntu-Light';
+    font-family: 'Itim-Regular';
     display: block;
 }
 .dropdown-content a:hover {background-color: #f1f1f1}
@@ -178,8 +187,8 @@ z-index:-1;
 	display: block;
 	width: 100%;
 	margin: auto;
-	background-color: #fff;
-	max-width: 1000px;
+	background-color: rgba(255,255,255,0.8);
+	max-width: 1100px;
 	box-shadow: 5px 5px 5px #888888;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -212,7 +221,7 @@ z-index:-1;
 
 .home p {
 	font-size: 18px;
-	font-family: 'Ubuntu-Light',sans-serif;
+	font-family: 'Opensans',sans-serif;
 	color: #000;
 	 text-align:justify;
 }
@@ -236,8 +245,8 @@ z-index:-1;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-    background: rgb(255,255,255);
-	max-width: 1000px;
+    background: rgba(255,255,255,0.8);
+	max-width: 1100px;
 	box-shadow: 5px 5px 5px #888888;
 }
 
@@ -255,12 +264,12 @@ z-index:-1;
 
 .publications .project {
   color: #222;
-  background: rgb(255,255,255);
+  background: rgba(255,255,255,0.8);
   border-spacing: 2px;
   border-color: gray;
   width: 100%;
   margin: 0 auto;
-  font-family: 'Ubuntu-Light',sans-serif;
+  font-family: 'Opensans',sans-serif;
   border-bottom: 1px #e5e5e5 solid;
 }
 
@@ -270,13 +279,14 @@ z-index:-1;
 
 .publications .project .current p {
   color: #fff;
+  background: rgba(0,0,50,0.8);
 }
 
 .publications .item {
   cursor: pointer;
   padding-top: 7px;
   padding-bottom: 7px;  
-	font-family: 'Ubuntu-Light',sans-serif;
+	font-family: 'Opensans',sans-serif;
 }
 
 .publications .item:hover {
@@ -319,12 +329,12 @@ z-index:-1;
 .publications .description h1 {
   margin-top: 0px;
   font-size: 23px;
-	font-family: 'Kreon-Light',serif;
+	font-family: 'Opensans',serif;
 	font-size: 15px;
 }
 
 .publications .description p {
-	font-family: 'Ubuntu-Light',sans-serif;
+	font-family: 'Opensans',sans-serif;
 	font-size: 14px;
 	 text-align:justify;
 }
@@ -347,8 +357,8 @@ z-index:-1;
 .resume .container {
 	display: block;
 	margin: 0 auto;
-	background-color: #fff;
-	max-width: 1000px;
+  	background: rgba(255,255,255,0.8);
+	max-width: 1100px;
 	box-shadow: 5px 5px 5px #888888;
 	width: 100%;
 }
@@ -362,7 +372,7 @@ z-index:-1;
 
 
 .resume .ext{
-	background-color: rgba(0,0,50,0.8);
+	background-color: rgba(0,0,50,0.7);
 	margin: 1px;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -379,18 +389,18 @@ z-index:-1;
 
 .resume h3 {
 	margin: 20px;
-	font-family: 'Kreon-Light',serif;
+	font-family: 'Opensans',serif;
 	color: #fff;
 }
 
 .resume .container h4, h5, h6 {
-	font-family: 'Ubuntu-Light',sans-serif;
+	font-family: 'Opensans',sans-serif;
 	color: #000;
 	font-size: 100%;
 }
 
 .resume .container p {
-	font-family: 'Ubuntu-Light',sans-serif;
+	font-family: 'Opensans',sans-serif;
 	color: #000;
 	font-size: 16px;
 }
@@ -419,8 +429,8 @@ z-index:-1;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-    background: rgb(255,255,255);
-	max-width: 1000px;
+  	background: rgba(255,255,255,0.8);
+	max-width: 1100px;
 	box-shadow: 5px 5px 5px #888888;
 }
 
@@ -443,7 +453,7 @@ z-index:-1;
   border-color: gray;
   width: 100%;
   margin: 0 auto;
-  font-family: 'Ubuntu-Light',sans-serif;
+  font-family: 'Opensans',sans-serif;
   border-bottom: 1px #e5e5e5 solid;
 }
 
@@ -459,7 +469,7 @@ z-index:-1;
   cursor: pointer;
   padding-top: 7px;
   padding-bottom: 7px;  
-	font-family: 'Ubuntu-Light',sans-serif;
+	font-family: 'Opensans',sans-serif;
 }
 
 .projects .item:hover {
@@ -502,12 +512,12 @@ z-index:-1;
 .projects .description h1 {
   margin-top: 0px;
   font-size: 23px;
-	font-family: 'Kreon-Light',serif;
+	font-family: 'Opensans',serif;
 	font-size: 15px;
 }
 
 .projects .description p {
-	font-family: 'Ubuntu-Light',sans-serif;
+	font-family: 'Opensans',sans-serif;
 	font-size: 14px;
 	 text-align:justify;
 }
@@ -535,7 +545,7 @@ z-index:-1;
 	padding: 20px;
 	width: 100%;
 	background-color: rgba(0,0,50,0.8);
-	max-width: 1000px;
+	max-width: 1100px;
 	box-shadow: 5px 5px 5px #888888;
 	border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -566,7 +576,7 @@ z-index:-1;
 .contact button {
 	margin-top: -30px;
 	margin-left: 48%;
-	font-family: 'Ubuntu-Light',serif;
+	font-family: 'Opensans',serif;
 	font-size: 17px;
   	font-style: italic;
 }
@@ -581,13 +591,13 @@ z-index:-1;
   height: 20px;
   margin:0;
   padding: 0;
-  background-color: rgba(0,0,50,0.8);
+  background-color: rgba(0,0,50,0.7);
   margin-bottom: 0;
 }
 
 .footer p {
     color: #fff;
-	font-family: 'Ubuntu-Light',serif;
+	font-family: 'Opensans',serif;
 	font-size: 12px;
 	text-align: right;
 	line-height: 20px;
