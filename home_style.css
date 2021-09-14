@@ -283,7 +283,7 @@ z-index:-1;
 
 .publications .project {
   color: #222;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.7);
   border-spacing: 2px;
   border-color: gray;
   width: 100%;
@@ -293,12 +293,11 @@ z-index:-1;
 }
 
 .publications .project .current {
-  background: rgba(0,0,50,0.8);
+  background: rgba(0,0,50,0.7);
 }
 
 .publications .project .current p {
   color: #fff;
-  background: rgba(0,0,50,0.8);
 }
 
 .publications .item {

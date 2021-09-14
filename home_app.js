@@ -1,16 +1,4 @@
-var prevScrollpos = window.pageYOffset;
 var main = function() {
-
-
-	$( window ).scroll(function() {
-		var currentScrollPos = window.pageYOffset;
-		if (prevScrollpos > currentScrollPos) {
-			$(".navbar").style.top = "0";
-		} else {
-			$(".navbar").style.top = "-200px";
-		}
-		prevScrollpos = currentScrollPos;
-	});
 
 	$('.navbar a').click(function(){
 		var newPage = $(this).attr('id');
