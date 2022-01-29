@@ -1,6 +1,9 @@
-author:
-  name: Thomas Gaudelet
-  url: https://tgaudelet.github.io
+title: Thomas Gaudelet's personal website
+name: Thomas Gaudelet
+title: Thomas Gaudelet's personal website
+description: >- 
+  Personal website of Thomas Gaudelet
+url: "tgaudelet.github.io" 
+github_username:  tgaudelet
 plugins:
   - jekyll-seo-tag
-title: Thomas Gaudelet's personal website

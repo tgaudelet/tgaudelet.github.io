@@ -15,21 +15,13 @@ html,body {
 }
 
 @font-face {
-  font-family: "Opensans";
-  src: url("Font/Opensans.tff");
-}
-@font-face {
-  font-family: "Opensans";
-  src: url("Font/Opensans-Regular.ttf");
-}
-@font-face {
 
   font-family: "Itim-Regular";
   src: url("Font/Itim-Regular.ttf");
 }
 @font-face {
   font-family: "Opensans";
-  src: url("Font/Opensans.tff");
+  src: url("Font/OpenSans-Regular.ttf");
 }
 @font-face {
   font-family: "Kreon-Bold";
