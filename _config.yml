@@ -1,4 +1,6 @@
+author:
+  name: Thomas Gaudelet
+  url: https://tgaudelet.github.io
 plugins:
   - jekyll-seo-tag
-author: Thomas Gaudelet
-name: Thomas Gaudelet
+title: Thomas Gaudelet's personal website
