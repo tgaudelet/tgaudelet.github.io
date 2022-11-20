@@ -72,21 +72,6 @@ var main = function() {
 	    }
 	});
 	
- 	/*$('.navbar a').click(function() {
-		$('.navbar a').removeClass('active');
-		$(this).addClass('active');
-	});*/
-
-	//$(window).scroll(function() {
-  	//	if ($(document).scrollTop() > 50) {
-    	//		$('.navbar').addClass('shrink');
-   	//		$('.shrink').removeClass('navbar');
-  	//		} else {
-   	//		$('.shrink').addClass('navbar');
-   	//		$('.navbar').removeClass('shrink');
-	//			  }
-	//			});
-
 }
 
 $(document).ready(main);
