@@ -18,7 +18,7 @@ jobs:
       id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
-        base-url-path: https://www.cicirello.org/
+        base-url-path: https://tgaudelet.github.io
     
     - name: Output stats
       run: |
