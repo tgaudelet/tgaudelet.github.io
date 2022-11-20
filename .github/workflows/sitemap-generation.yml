@@ -4,7 +4,6 @@ on:
   push:
     branches: 
 	- master
-	- staging
     paths: [ '**.html', '**.pdf' ]
 
 jobs:
