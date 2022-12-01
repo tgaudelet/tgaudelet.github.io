@@ -2,7 +2,7 @@ name: Generate sitemap
 
 on:
   push:
-    paths: [ '**.html', '**.pdf' ]
+    paths: [ '**.html' ]
 
 jobs:
   sitemap_job:
